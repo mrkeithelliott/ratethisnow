@@ -1,0 +1,9 @@
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "4c1498f793fb383e2bb85732f24e5a7c"
+build_time: [531290192, 986587000]
+inputs:
+  "/Users/keithelliott/repos/ratethisnow/MessagesExtension/RTNRatingsViewController.swift": [530951704, 0]
+  "/Users/keithelliott/repos/ratethisnow/MessagesExtension/RatedItemCell.swift": [530124365, 0]
+  "/Users/keithelliott/repos/ratethisnow/MessagesExtension/RTNCreateRatedViewController.swift": [531268837, 0]
+  "/Users/keithelliott/repos/ratethisnow/MessagesExtension/MessagesViewController.swift": [531283611, 0]
+  "/Users/keithelliott/repos/ratethisnow/MessagesExtension/RTNItem.swift": [530817102, 0]

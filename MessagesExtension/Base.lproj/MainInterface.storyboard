@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Ratings View Controller-->
+        <scene sceneID="0pS-xE-3cL">
+            <objects>
+                <collectionViewController storyboardIdentifier="RTNRatingsViewController" id="XlN-bg-WDF" customClass="RTNRatingsViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7SL-AY-sgv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mkg-xo-hmu">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="add_ratings_cell" id="8sI-1C-rEj" customClass="AddRatedItemCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_rating" translatesAutoresizingMaskIntoConstraints="NO" id="bis-sf-a6q"/>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="bis-sf-a6q" firstAttribute="leading" secondItem="8sI-1C-rEj" secondAttribute="leading" id="1k7-A8-pVf"/>
+                                    <constraint firstItem="bis-sf-a6q" firstAttribute="top" secondItem="8sI-1C-rEj" secondAttribute="top" id="7wY-u9-Mfx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="bis-sf-a6q" id="RhB-3C-ICs"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="stickerCell" id="7Xn-OF-fvh" customClass="RatedItemCell" customModule="MessagesExtension" customModuleProvider="target">
+                                <rect key="frame" x="138" y="10" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjG-wL-Sqk" customClass="MSStickerView">
+                                            <frame key="frameInset" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="stickerView" destination="mjG-wL-Sqk" id="AQW-vj-tpp"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="XlN-bg-WDF" id="2qm-Z4-jda"/>
+                            <outlet property="delegate" destination="XlN-bg-WDF" id="dIP-wl-RyD"/>
+                        </connections>
+                    </collectionView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARw-fF-pS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="99.400299850074973"/>
+        </scene>
+        <!--Create Rating View Controller-->
+        <scene sceneID="3a3-s2-bT9">
+            <objects>
+                <viewController storyboardIdentifier="RTNCreateRatingViewController" id="Skf-MB-9j6" customClass="RTNCreateRatingViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Qi-Tg-BbV"/>
+                        <viewControllerLayoutGuide type="bottom" id="hHa-RF-bjX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h4D-ek-i4m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxG-9E-wqZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nm1-cZ-pO8"/>
+                                    <constraint firstAttribute="width" constant="322" id="oiY-hO-bZA"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="unrated"/>
+                                <connections>
+                                    <action selector="changeRating:" destination="Skf-MB-9j6" eventType="touchUpInside" id="enx-sn-fga"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ji1-XW-Foa">
+                                <state key="normal" title="Rate it!"/>
+                                <connections>
+                                    <action selector="addRating:" destination="Skf-MB-9j6" eventType="touchUpInside" id="Fhg-85-qPG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Let's rate something!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVa-1e-lCX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="hEy-I9-aU9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Skf-MB-9j6" id="SdW-dK-dWA"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqm-9s-r4k">
+                                <state key="normal" backgroundImage="images-2"/>
+                                <connections>
+                                    <action selector="changeRatedItem:" destination="Skf-MB-9j6" eventType="touchUpInside" id="UiD-kD-PuN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uqm-9s-r4k" firstAttribute="centerX" secondItem="h4D-ek-i4m" secondAttribute="centerX" id="07S-Ma-lAQ"/>
+                            <constraint firstItem="Uqm-9s-r4k" firstAttribute="top" secondItem="zVa-1e-lCX" secondAttribute="bottom" constant="34" id="19Z-hS-0Cu"/>
+                            <constraint firstItem="ji1-XW-Foa" firstAttribute="top" secondItem="oxG-9E-wqZ" secondAttribute="bottom" constant="35" id="6bi-e4-Qfv"/>
+                            <constraint firstItem="ji1-XW-Foa" firstAttribute="centerX" secondItem="h4D-ek-i4m" secondAttribute="centerX" id="Epi-Dj-jlA"/>
+                            <constraint firstItem="oxG-9E-wqZ" firstAttribute="centerX" secondItem="h4D-ek-i4m" secondAttribute="centerX" id="HRW-FG-dnh"/>
+                            <constraint firstItem="oxG-9E-wqZ" firstAttribute="top" secondItem="Uqm-9s-r4k" secondAttribute="bottom" constant="44" id="Ice-IH-OV7"/>
+                            <constraint firstItem="Uqm-9s-r4k" firstAttribute="centerX" secondItem="h4D-ek-i4m" secondAttribute="centerX" id="Txh-GK-6Aa"/>
+                            <constraint firstItem="zVa-1e-lCX" firstAttribute="centerX" secondItem="h4D-ek-i4m" secondAttribute="centerX" id="Y1J-Sg-y9h"/>
+                            <constraint firstItem="zVa-1e-lCX" firstAttribute="top" secondItem="4Qi-Tg-BbV" secondAttribute="bottom" constant="17" id="a4l-9X-4a4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captionTF" destination="zVa-1e-lCX" id="8uj-p4-1eT"/>
+                        <outlet property="ratedImageBtn" destination="Uqm-9s-r4k" id="MLw-Tp-0Ll"/>
+                        <outlet property="ratingStarsBtn" destination="oxG-9E-wqZ" id="4dh-6X-jQz"/>
+                        <outlet property="submitBtn" destination="ji1-XW-Foa" id="DQT-Jo-bIc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ii1-3R-3TP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552.8" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add_rating" width="100" height="100"/>
+        <image name="images-2" width="225" height="225"/>
+        <image name="unrated" width="438" height="73"/>
+    </resources>
+</document>
