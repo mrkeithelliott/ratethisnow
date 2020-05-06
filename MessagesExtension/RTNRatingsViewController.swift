@@ -52,7 +52,7 @@ class RTNRatingsViewController: UICollectionViewController {
         case .add:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddRatedItemCell.reuseId, for: indexPath) as? AddRatedItemCell else { fatalError("failed to find add cell")}
             
-            cell.imageView = UIImageView(image: UIImage(named:"add_rating"))
+            cell.imageView.image = UIImage(named:"add_rating")
             return cell
             
         case .rating(let ratedItem):
