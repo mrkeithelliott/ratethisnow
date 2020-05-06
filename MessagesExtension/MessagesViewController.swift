@@ -88,13 +88,13 @@ class MessagesViewController: MSMessagesAppViewController {
             viewcontroller = vc
         }
         
-        for child in childViewControllers {
-            child.willMove(toParentViewController: nil)
+        for child in children {
+            child.willMove(toParent: nil)
             child.view.removeFromSuperview()
-            child.removeFromParentViewController()
+            child.removeFromParent()
         }
         
-        addChildViewController(viewcontroller)
+        addChild(viewcontroller)
         
         viewcontroller.view.frame = view.bounds
         viewcontroller.view.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +105,7 @@ class MessagesViewController: MSMessagesAppViewController {
         viewcontroller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         viewcontroller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        viewcontroller.didMove(toParentViewController: self)
+        viewcontroller.didMove(toParent: self)
     }
     
     fileprivate func composeMessage(with ratedItem: RTNItem, layoutImg: UIImage?, session: MSSession? = nil) -> MSMessage? {
